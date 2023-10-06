@@ -14,10 +14,10 @@ import (
 
 // nep413SignatureRequest is the response from an NEP-413 signature.
 // it implements the encoding.BinaryMarshaler and encoding.BinaryUnmarshaler interfaces.
-// it utilizes borsch for deterministic serialization
+// it utilizes borsch for deterministic serialization.
+// In the NEP-413 spec, the NEAR address of the caller is included.
+// This is not included in this implementation, as it is not needed for verification.
 type Nep413SignatureResponse struct {
-	// AccountId is the account id that signed the message
-	AccountId string
 	// Signature is the base64 encoded signature
 	Signature string
 	// PublicKey is the hex encoded public key, prepending with NEAR's "ed25519"
@@ -74,7 +74,7 @@ type Nep413Message struct {
 	Recipient string
 
 	// CallbackUrl is the url to call when the signature is ready
-	CallbackUrl string
+	CallbackUrl *string
 }
 
 // Verify verifies an NEP-413 signature.

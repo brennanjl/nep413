@@ -15,7 +15,6 @@ func Test_Nep413(t *testing.T) {
 
 	res := nep413.Nep413SignatureResponse{
 		Signature: "Ni+rXvOtyzRr7X+qtvQ9+iJUu2e8L/e6cPjSzOYr+6W22chVnptTW0QqTUhFgKUbgPwd2tTcfB1D9Q+0Xb+sBg==",
-		AccountId: "juliosantos.near",
 		PublicKey: "ed25519:8HnzkUaX21h99idPghFajoV3JZvy3SmJ4mqVwSVfLByg",
 	}
 
