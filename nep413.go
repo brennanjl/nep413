@@ -12,7 +12,7 @@ import (
 	borsch "github.com/near/borsh-go"
 )
 
-// nep413SignatureRequest is the response from an NEP-413 signature.
+// nep413SignatureResponse is the response from an NEP-413 signature.
 // it implements the encoding.BinaryMarshaler and encoding.BinaryUnmarshaler interfaces.
 // it utilizes borsch for deterministic serialization.
 // In the NEP-413 spec, the NEAR address of the caller is included.
@@ -56,7 +56,6 @@ func (n *Nep413SignatureResponse) UnmarshalBinary(data []byte) error {
 }
 
 // Nep413Message is the message sent to the NEP-413 signer.
-// it implements the encoding.BinaryMarshaler and encoding.BinaryUnmarshaler interfaces.
 // it utilizes borsch for deterministic serialization
 type Nep413Message struct {
 	// Tag is some NEAR specific thing that is not really explained anywhere,
